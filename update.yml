@@ -1,0 +1,14 @@
+---
+ - hosts: win
+   connection: winrm
+   tasks:
+     - win_updates:
+         category_names: ['SecurityUpdates']
+         state: searched
+       register: update_resultcount
+       ignore_errors: True
+    # - debug: var=update_resultcount
+     - local_action: copy content={{ update_resultcount }} dest=/root/patching/text.text
+      # deligate_to: localhost
+     
+         
