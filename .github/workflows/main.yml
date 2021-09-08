@@ -16,6 +16,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: pullreminders/slack-action@master
         env:
-          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
           args: '{\"channel\":\"U02DM6Q95PV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"}'
