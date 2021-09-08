@@ -1,0 +1,12 @@
+name: push Notification for every commit
+on: [push]
+jobs:
+  builds:
+     runs-on: ubuntu-latest
+     
+     steps:
+        - name: Send Notification
+          uses: archive/github-actions-slack@v2.0.0
+          env:
+            slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
+            repository: siridevo/*
