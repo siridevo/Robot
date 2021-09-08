@@ -18,4 +18,4 @@ jobs:
         env:
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
         with:
-          args: '{\"channel\":\"U02DM6Q95PV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"
+          args: '{\"channel\":\"U02DM6Q95PV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"}'
