@@ -1,7 +1,7 @@
 name: push Notification for every commit
 on: [push]
 jobs:
-  builds:
+  slack-notifications:
      runs-on: ubuntu-20.04
      steps:
         - name: Send Notification
