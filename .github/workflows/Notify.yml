@@ -15,5 +15,6 @@ jobs:
      env:
        SLACK_BOT_USER_OAUTH_ACCESS_TOKEN:: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
        API_KEY: ${{ secrets.API_KEY }}
+       MESSAGE: "There is a new commit!"
        repository: siridevo/*
 
