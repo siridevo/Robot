@@ -22,15 +22,4 @@ jobs:
       - name: Send Slack Message Result
         run: echo "${{ steps.send-message.outputs.slack-result }}"
       
-      - uses: actions/checkout@master
-        with:
-           persist-credentials: false
-           fetch-depth: 0
-           run: |
-             git add .
-             git commit -m "new Commit"
-      - name: Commit & Push changes
-        uses: actions-js/push@master
-        with:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
