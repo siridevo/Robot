@@ -1,15 +1,13 @@
-name: Push on commit
-
-on: [push]
-
+on: push
+name: Slack Notification Demo
 jobs:
-  build:
-
+  slackNotification:
+    name: Slack Notification
     runs-on: ubuntu-latest
-
     steps:
-    - name: Send Push Notification
-      uses: techulus/push-github-action@1.0.0
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
       env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        MESSAGE: "There is a new commit!"
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
