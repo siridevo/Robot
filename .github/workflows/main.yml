@@ -20,4 +20,4 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
-          args: '{\"channel\":\"U02DM6Q95PV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"}'
+          args: '{\"channel\":\"C02DF28U8CV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"}'
