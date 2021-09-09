@@ -21,3 +21,6 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
           args: '{\"channel\":\"C02DF28U8CV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"}'
+      - name: Send Slack Message Result
+        run: echo "${{ steps.send-message.outputs.slack-result }}"
+
