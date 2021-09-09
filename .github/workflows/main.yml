@@ -4,8 +4,6 @@ name: Slack
 
 # Controls when the workflow will run
 on:
-  push:
-    branches: [ master ]
   # Triggers the workflow on push or pull request events but only for the master "branch"
   pull_request:
     branches: [ master ]
@@ -23,4 +21,16 @@ jobs:
           args: '{\"channel\":\"C02DF28U8CV\",\"slack-text\":\"Hello! Event  "{{ github.event_name }}" in "${{ github.repository }}" 🤓\"}'
       - name: Send Slack Message Result
         run: echo "${{ steps.send-message.outputs.slack-result }}"
+      
+      - uses: actions/checkout@master
+        with:
+           persist-credentials: false
+           fetch-depth: 0
+           run: |
+             git add .
+             git commit -m "new Commit"
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
